@@ -20,7 +20,7 @@
 FROM registry.access.redhat.com/ubi10/ubi:latest
 
 ARG CRIU_REPO=https://github.com/ibmruntimes/criu.git
-ARG CRIU_BRANCH=upstream-master
+ARG CRIU_BRANCH=criu-dev
 # Last stable commit SHA
 ARG CRIU_SHA
 
@@ -50,6 +50,7 @@ RUN yum -y update && yum install -y \
     libnftnl \
     libnl3-devel \
     libpcap \
+    libuuid-devel \
     make \
     nftables \
     nftables-devel \

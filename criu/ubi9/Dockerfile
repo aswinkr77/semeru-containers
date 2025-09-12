@@ -42,6 +42,7 @@ RUN yum -y update && yum install -y \
     gnutls-devel \
     libcap-devel \
     libnl3-devel \
+    libuuid-devel \
     nftables \
     pkgconfig \
     protobuf-c \
@@ -70,7 +71,7 @@ RUN cd /tmp; \
     mv criu criu-build; \
     cd criu-build; \
     if [ "x${CRIU_SHA}" != x ] ; then \
-         git reset --hard ${CRIU_SHA}; \
+        git reset --hard ${CRIU_SHA}; \
     fi; \
     make DESTDIR=/tmp/criu PREFIX=/usr/local LIBDIR=/usr/local/lib64 install-lib install-criu; \
     cd ../; \
