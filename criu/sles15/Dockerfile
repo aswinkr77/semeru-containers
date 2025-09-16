@@ -26,7 +26,7 @@ ARG CRIU_SHA
 ARG FTP3_USER=rtsystem
 ARG FTP3_PASSWORD
 
-RUN zypper ar -f ftp://${FTP3_USER}:${FTP3_PASSWORD}@ftp3install.linux.ibm.com/suse/scc/Updates/SLE-Module-Python3/15-SP7/$(arch)/update "SLES15-SP7 Updates Python 3"
+RUN echo "${FTP3_USER}" && echo "${FTP3_PASSWORD}" && zypper ar -f ftp://${FTP3_USER}:${FTP3_PASSWORD}@ftp3install.linux.ibm.com/suse/scc/Updates/SLE-Module-Python3/15-SP7/$(arch)/update "SLES15-SP7 Updates Python 3"
 
 RUN zypper update -y
 
